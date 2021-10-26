@@ -5,20 +5,17 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         autoIncrement: true,
         unique: true,
         allowNull: false
       },
       firstName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'first_name'
+        allowNull: false
       },
       lastName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'last_name'
+        allowNull: false
       },
       email: {
         type: DataTypes.STRING,
