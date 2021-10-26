@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
-    'user',
+    'Users',
     {
       id: {
         type: DataTypes.INTEGER,
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       timestamps: true,
       underscored: true,
-      tableName: 'users'
+      freezeTableName: true
     }
   );
   return User;
