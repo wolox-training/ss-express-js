@@ -3,7 +3,7 @@ const { healthCheck } = require('./controllers/healthCheck');
 const { getWeets } = require('./controllers/weets');
 const { newUser } = require('./controllers/users');
 const { validateUser } = require('./validations/user');
-const { checkValidations } = require('./middlewares/checkValidations');
+const checkValidations = require('./middlewares/checkValidations');
 
 exports.init = app => {
   app.get('/health', healthCheck);
