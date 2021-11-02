@@ -5,7 +5,14 @@ const DEFAULT_STATUS_CODE = 500;
 
 const statusCodes = {
   [errors.DATABASE_ERROR]: 503,
-  [errors.DEFAULT_ERROR]: 500
+  [errors.DEFAULT_ERROR]: 500,
+  [errors.VALIDATION_ERROR]: 400
+};
+
+exports.errorMessages = {
+  invalidEmail: 'Email Inválido',
+  passwordLength: 'Contraseña demasiado corta',
+  passwordNotAlphanumeric: 'La contraseña solo debe contener letras y números.'
 };
 
 exports.handle = (error, req, res, next) => {

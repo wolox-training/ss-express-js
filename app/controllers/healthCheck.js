@@ -1,1 +1,3 @@
-exports.healthCheck = (_, res) => res.status(200).send({ uptime: process.uptime() });
+const { statusCodes } = require('../constants/codes');
+
+exports.healthCheck = (_, res) => res.status(statusCodes.OK).send({ uptime: process.uptime() });
