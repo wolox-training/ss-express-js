@@ -1,5 +1,5 @@
 const { check } = require('express-validator');
-const errorMessages = require('../middlewares/errors');
+const { errorMessages } = require('../middlewares/errors');
 
 exports.validateUser = [
   check('email', errorMessages.invalidEmail).custom(email => {
