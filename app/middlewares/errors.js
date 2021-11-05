@@ -10,9 +10,9 @@ const statusCodes = {
 };
 
 exports.errorMessages = {
-  invalidEmail: 'Email Inválido',
+  invalidEmail: 'Email inválido',
   passwordLength: 'Contraseña demasiado corta',
-  passwordNotAlphanumeric: 'La contraseña solo debe contener letras y números.'
+  passwordNotAlphanumeric: 'La contraseña solo debe contener letras y números'
 };
 
 exports.handle = (error, req, res, next) => {
