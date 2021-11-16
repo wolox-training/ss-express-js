@@ -3,9 +3,13 @@ module.exports = {
     type: 'integer',
     example: 7
   },
-  username: {
+  userFirstName: {
     type: 'string',
-    example: 'tom99'
+    example: 'Tom'
+  },
+  userLastName: {
+    type: 'string',
+    example: 'Engels'
   },
   userEmail: {
     type: 'string',
@@ -17,8 +21,11 @@ module.exports = {
       id: {
         $ref: '#/components/schemas/userId'
       },
-      username: {
-        $ref: '#/components/schemas/username'
+      firstName: {
+        $ref: '#/components/schemas/userFirstName'
+      },
+      lastName: {
+        $ref: '#/components/schemas/userLastName'
       },
       email: {
         $ref: '#/components/schemas/userEmail'

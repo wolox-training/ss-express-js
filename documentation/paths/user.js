@@ -55,7 +55,7 @@ module.exports = {
                 $ref: '#/components/schemas/Error'
               },
               example: {
-                message: 'User´s email already exists',
+                message: 'Email inválido',
                 internal_code: 'invalid_parameters'
               }
             }
