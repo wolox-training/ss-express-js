@@ -35,7 +35,8 @@ const config = {
       bodySizeLimit: process.env.API_BODY_SIZE_LIMIT,
       parameterLimit: process.env.API_PARAMETER_LIMIT,
       port: process.env.PORT,
-      baseURL: process.env.PHRASES_URL
+      baseURL: process.env.PHRASES_URL,
+      secret: process.env.SECRET_PHRASE
     },
     session: {
       header_name: 'authorization',
