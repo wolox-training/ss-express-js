@@ -30,8 +30,8 @@ exports.createSession = async data => {
     }
   });
 
-  if (!user) throw validationError(errorMessages.userNotFound);
+  if (!user) throw validationError(errorMessages.NotFound);
   const isEqual = await comparePassword(data.password, user.password);
-  if (!isEqual) throw validationError(errorMessages.wrongPassword);
+  if (!isEqual) throw validationError(errorMessages.NotFound);
   return user;
 };

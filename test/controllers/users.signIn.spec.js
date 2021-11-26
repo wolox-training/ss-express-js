@@ -37,7 +37,7 @@ describe('POST /users/sessions', () => {
     });
 
     expect(statusCode).toBe(400);
-    expect(body.message).toBe('El email no corresponde a un usuario registrado.');
+    expect(body.message).toBe('Email y/o contraseña inválidos.');
   });
 
   test('with a invalid password, should be throw a error', async () => {
@@ -47,6 +47,6 @@ describe('POST /users/sessions', () => {
     });
 
     expect(statusCode).toBe(400);
-    expect(body.message).toBe('La contraseña es incorrecta.');
+    expect(body.message).toBe('Email y/o contraseña inválidos.');
   });
 });
