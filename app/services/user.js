@@ -3,7 +3,7 @@ const User = require('../models').Users;
 const { validationError } = require('../errors');
 const { errorMessages } = require('../constants/errorMessages');
 
-const encryptPassword = async password => {
+exports.encryptPassword = async password => {
   const salt = await bcrypt.genSalt(10);
   return bcrypt.hash(password, salt);
 };
@@ -14,7 +14,7 @@ const comparePassword = async (bodyPassword, databasePassword) => {
 };
 
 exports.createUser = async data => {
-  const hash = await encryptPassword(data.password);
+  const hash = await this.encryptPassword(data.password);
   return User.create({
     firstName: data.first_name,
     lastName: data.last_name,

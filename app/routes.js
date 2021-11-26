@@ -9,7 +9,7 @@ exports.init = app => {
   app.get('/health', healthCheck);
   app.get('/weets', getWeets);
   app.post('/users', [validateUser, checkValidations], newUser);
-  app.get('/users/sessions', validateEmail, newSession);
+  app.post('/users/sessions', validateEmail, newSession);
   // app.put('/endpoint/put/path', [], controller.methodPUT);
   // app.post('/endpoint/post/path', [], controller.methodPOST);
 };
