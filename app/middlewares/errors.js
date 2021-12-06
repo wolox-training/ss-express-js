@@ -9,12 +9,6 @@ const statusCodes = {
   [errors.VALIDATION_ERROR]: 400
 };
 
-exports.errorMessages = {
-  invalidEmail: 'Email inválido',
-  passwordLength: 'Contraseña demasiado corta',
-  passwordNotAlphanumeric: 'La contraseña solo debe contener letras y números'
-};
-
 exports.handle = (error, req, res, next) => {
   if (error.internalCode) res.status(statusCodes[error.internalCode] || DEFAULT_STATUS_CODE);
   else {
