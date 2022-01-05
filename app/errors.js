@@ -11,3 +11,9 @@ exports.defaultError = message => internalError(message, exports.DEFAULT_ERROR);
 
 exports.VALIDATION_ERROR = 'validation_error';
 exports.validationError = message => internalError(message, exports.VALIDATION_ERROR);
+
+exports.TOKEN_EXPIRED = 'token_expired';
+exports.tokenExpiredError = message => internalError(message, exports.TOKEN_EXPIRED);
+
+exports.TOKEN_INVALID = 'token_invalid';
+exports.tokenInvalidError = message => internalError(message, exports.TOKEN_INVALID);
