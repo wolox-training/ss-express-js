@@ -83,6 +83,26 @@ describe('GET /users', () => {
     expect(body.message).toBe('Token inválido');
   });
 
+  test('with a invalid page query, should be throw a error', async () => {
+    const token = sign({ id: 2 });
+    const { body, statusCode } = await request
+      .get('/users?page=hi&limit=3')
+      .set('Authorization', `Bearer ${token}`);
+
+    expect(statusCode).toBe(400);
+    expect(body.message[0].msg).toBe('Page must be a number.');
+  });
+
+  test('with a invalid limit query, should be throw a error', async () => {
+    const token = sign({ id: 2 });
+    const { body, statusCode } = await request
+      .get('/users?page=1&limit=hi')
+      .set('Authorization', `Bearer ${token}`);
+
+    expect(statusCode).toBe(400);
+    expect(body.message[0].msg).toBe('Limit must be a number.');
+  });
+
   afterAll(async () => {
     await new Promise(resolve => setTimeout(() => resolve(), 500));
   });

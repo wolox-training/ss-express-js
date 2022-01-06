@@ -1,4 +1,4 @@
-const { check } = require('express-validator');
+const { check, query } = require('express-validator');
 const { errorMessages } = require('../constants/errorMessages');
 
 exports.validateUser = [
@@ -28,3 +28,16 @@ exports.validateEmail = check('email', errorMessages.invalidEmail).custom(email 
   }
   return true;
 });
+
+exports.validateQuery = [
+  query('page')
+    .optional()
+    .toInt()
+    .isNumeric()
+    .withMessage('Page must be a number.'),
+  query('limit')
+    .optional()
+    .toInt()
+    .isNumeric()
+    .withMessage('Limit must be a number.')
+];
