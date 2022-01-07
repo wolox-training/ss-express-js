@@ -35,3 +35,13 @@ exports.createSession = async data => {
   if (!isEqual) throw validationError(errorMessages.NotFound);
   return user;
 };
+
+exports.getUsers = async (limit, offset) => {
+  const users = await User.findAndCountAll({
+    where: {},
+    attributes: { exclude: ['password'] },
+    limit,
+    offset
+  });
+  return users;
+};
